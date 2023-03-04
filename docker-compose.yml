@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  moviesDB:
+    container_name: moviesDB
+    image: mysql:8.0
+    cap_add:
+      - SYS_NICE
+    environment:
+      - MYSQL_DATABASE=moviedb
+      - MYSQL_ROOT_PASSWORD=password1
+      - MYSQL_USER=test1
+      - MYSQL_PASSWORD=password
+    ports:
+      - 3306:3306
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - mysql_config:/etc/mysql/conf.d
+
+volumes:
+  mysql_data:
+  mysql_config:
