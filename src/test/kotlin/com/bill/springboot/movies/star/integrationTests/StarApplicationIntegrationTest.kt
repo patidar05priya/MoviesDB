@@ -43,7 +43,7 @@ class StarApplicationIntegrationTest {
     fun findByNameSuccess() {
         val result = restTemplate.getForEntity("/v1/stars/$starName", Star::class.java);
         assertNotNull(result)
-        assertEquals(HttpStatus.NOT_FOUND, result?.statusCode)
+        assertEquals(HttpStatus.OK, result?.statusCode)
     }
 
 }

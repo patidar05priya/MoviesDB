@@ -6,7 +6,7 @@ logging:
 spring:
   datasource:
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/moviedb
+    url: jdbc:mysql://localhost:3306/moviedb?useSSL=false&allowPublicKeyRetrieval=true
     username: root
     password: password
   jpa:
